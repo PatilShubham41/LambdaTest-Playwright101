@@ -31,6 +31,7 @@ export type FormDetails = {
     Address_2: string;
     State: string;
     Zip_code: string;
+    [key: string]: string
 
 }
 

@@ -15,6 +15,7 @@ test('Test Scenario 1', async ({ page, homePage, formPage }) => {
 test('Test Scenario 2', async ({ sliderPage, homePage }) => {
     const valToBeSet = '85'
     homePage.selectActivity('Drag & Drop Sliders');
+    await sliderPage.silderDefault15Val().waitFor();
     await sliderPage.slide(valToBeSet);
     await expect(sliderPage.silderDefault15Val()).toHaveText(valToBeSet, {timeout: 10_000});
 });

@@ -25,7 +25,7 @@ const capabilities = {
 };
 
 // Patching the capabilities dynamically according to the project name.
-const modifyCapabilities = (configName, testName) => {
+const modifyCapabilities = (configName: string , testName: string) => {
     let config = configName.split("@lambdatest")[0];
     let [browserName, browserVersion, platform] = config.split(":");
     capabilities.browserName = browserName
