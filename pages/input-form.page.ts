@@ -9,13 +9,16 @@ export default class InputFormPage {
     private readonly selectState = async (state: State) => await this.page.locator('select[name="country"]').selectOption({ label: state })
     public readonly successMsg = () => this.page.getByRole('paragraph').and(this.page.locator('.success-msg'))
 
-
+    async submitform(){
+        await this.submitButton().click();
+    }
+    
     async fillForm(formDetails: FormDetails, state: State) {
         for (const placeHolder in formDetails) {
             await this.formFields(placeHolder).fill(formDetails[placeHolder]);
         }
         await this.selectState(state);
-        await this.submitButton().click();
+        await this.submitform();
     }
 
 }

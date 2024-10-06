@@ -34,6 +34,7 @@ test('Test Scenario 3', async ({ inputFormPage, homePage }) => {
         Zip_code: faker.location.zipCode()
     }
     await homePage.selectActivity("Input Form Submit");
+    await inputFormPage.submitform();
     await inputFormPage.fillForm(formDetails, "United States");
     await expect(inputFormPage.successMsg()).toHaveText('Thanks for contacting us, we will get back to you shortly.');
 })
